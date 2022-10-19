@@ -24,6 +24,9 @@ type Order struct {
 }
 
 func getUserData(order *Order) {
+	// hanya contoh, pada kenyataan nya
+	// function ini akan nge call service lain
+	// baik menggunakan rest atau grpc
 	time.Sleep(500 * time.Millisecond)
 	userData := User{
 		ID:         1,
@@ -47,8 +50,8 @@ func getOrderData() Order {
 	var orderData Order
 	orderData.ID = 1
 	// todo: use wait group and call as goroutine
-	// getUserData(&orderData)
-	// getItemData(&orderData)
+	getUserData(&orderData)
+	getItemData(&orderData)
 	return orderData
 }
 
