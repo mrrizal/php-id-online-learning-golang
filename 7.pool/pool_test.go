@@ -8,8 +8,6 @@ import (
 	"testing"
 )
 
-// var buf, _ = json.Marshal(User{Name: "Test", ID: 1})
-
 var userPool = sync.Pool{
 	New: func() interface{} {
 		return &User{Name: "Test", ID: 1}
