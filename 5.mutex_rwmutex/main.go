@@ -19,6 +19,8 @@ func mutexExample() {
 		wg.Add(1)
 		go func() {
 			defer wg.Done()
+			// todo: comment lock and unlock,
+			// see what happen
 			intData.m.Lock()
 			defer intData.m.Unlock()
 			time.Sleep(time.Second)
@@ -77,6 +79,20 @@ func rwMutexExample() {
 }
 
 func main() {
+	/*
+		mutex nge lock variable/struct/data
+		biar ga bisa di akses sama goroutine yg lain
+
+		biasanya untuk mastiin value dari
+		variable tersebut sync ketika ada perubahan data
+	*/
+
 	mutexExample()
 	// rwMutexExample()
+
+	// for i := 0; i < 5; i++ {
+	// 	fmt.Println("=============================")
+	// 	// mutexExample()
+	// 	// rwMutexExample()
+	// }
 }
