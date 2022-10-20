@@ -11,8 +11,8 @@ func UnBufferedChannel() {
 		defer close(intStream)
 		defer fmt.Println("producer done.")
 		for i := 0; i < 5; i++ {
-			fmt.Printf("sending %d\n", i)
 			intStream <- i
+			fmt.Printf("sending %d\n", i)
 		}
 	}()
 
